@@ -1,0 +1,456 @@
+@import url(common.css);
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+html{scroll-behavior: smooth;}
+
+body{
+  width: 100%;
+  margin: auto;
+  background-color: #22231e;
+}
+@keyframes ani{
+  0%{opacity: 1;}
+  50%{opacity: 0.5;}
+  100%{opacity: 1;}
+}
+@keyframes circle{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+header{
+  margin: auto;
+  display: flex;
+}
+nav{
+  background-color: rgb(226, 78, 78);
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+section{
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  overflow: hidden;
+}
+.contents h2{
+  color: #fff;
+  border-bottom: 1px solid lightgray;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  margin:50px 0 30px 0px;
+  text-align: center;
+  font-size: 32px;
+}
+ul{
+  display: flex;
+  text-align: center;
+}
+ul li{
+  padding: 20px 50px;
+  color: #fff;
+}
+ul li a{
+  position:relative;
+}
+ul li a:before{
+  content:'';
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition:0.5s;
+}
+ul li a:hover:before{
+  width: 100%;}
+/* main_____________________________ */
+.image_2{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 950px;
+}
+.caption{
+  background:url(/image/배경4.jpg)no-repeat;
+  width: 100%;
+  height: 900px;
+  transform: translateY(60px);
+  overflow: hidden;
+}
+.caption .t_text{
+  transform: translateX(0px);
+}
+.caption img{
+width: 800px;
+height: 1050px;
+position: relative;
+transform: translateY(-80px);
+}
+.caption h1{
+  position: relative;
+}
+.caption h1:after{
+  content: '';
+  position: absolute;
+  background-color:#fff;
+  box-shadow:0 0 12px #fff;
+  left: -110px;
+  top:-50px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: ani 1.5s infinite;
+}
+.caption h1:before{
+  content: '';
+  position: absolute;
+  background-color:#fff;
+  box-shadow:0 0 12px #fff;
+  right: -650px;
+  top: 150px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: ani 1.5s infinite;
+  animation-delay: 0.5s;
+}
+
+.caption h1{
+  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 120px;
+  color: antiquewhite;
+  position: absolute;
+  top:15%;
+  left: 17%;
+}
+.caption h1 span{
+  color: #fff;
+}
+.caption h2{
+  position: absolute;
+  color: rgb(241, 213, 85);
+  font-size: 40px;
+  top:27%;
+  left: 26%;
+  font-weight: normal;
+  text-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+.caption p{
+  position: absolute;
+  color: #fff;
+  bottom: 6%;
+  font-size:40px;
+  right: 25%;
+}
+.caption p u{
+  font-family: 'GangwonEdu_OTFBoldA';
+  color: rgb(114, 180, 227);
+  font-size:60px;
+}
+.caption strong{
+  color: antiquewhite;
+  font-size: 50px;
+}
+/* 무비차트_________________________ */
+#movie{
+  margin: 30px;
+  text-align: center;
+}
+.m_image{
+  margin-top: 70px;
+  display: inline-block;
+}
+.front img{
+  padding: 12px;
+  width: 198px;
+  height: 250px;
+  position: relative;
+}
+.m_image .back{
+  position: absolute;
+  transform: translateX(12px) translateY(-290px);
+  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+  width: 198px;
+  height: 250px;
+  opacity: 0;
+}
+.m_image .text{
+  transform: translateX(27px) translateY(50px);
+}
+.m_image h3{
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;}
+.m_image p{
+  margin-top:10px;
+  text-align: left;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+.m_image a{
+  display: block;
+  margin-top: 65px;
+  color: #fff;
+  background-color: rgb(202, 74, 74);
+  transform: translate(50px);
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+}
+.m_image:hover .back{
+  opacity: 1;
+}
+
+/* 상영예정작______________________________ */
+#plan{
+  margin: 30px;
+  text-align: center;
+}
+.p_image img{
+  width: 200px;
+}
+.p_image{
+  margin-top: 70px;
+  display: inline-block;
+}
+.front img{
+  padding: 12px;
+  width: 198px;
+  height: 250px;
+  position: relative;
+}
+.p_image .back{
+  position: absolute;
+  transform: translateX(12px) translateY(-290px);
+  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+  width: 198px;
+  height: 250px;
+  opacity: 0;
+}
+.p_image .text{
+  transform: translateX(27px) translateY(50px);
+}
+.p_image h3{
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;}
+.p_image p{
+  margin-top:10px;
+  text-align: left;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+.p_image a{
+  display: block;
+  margin-top: 65px;
+  color: #fff;
+  background-color: cadetblue;
+  transform: translate(50px);
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+}
+.p_image:hover .back{
+  opacity: 1;
+}
+/* 이벤트__________________________ */
+.contents_e{
+  display: flex;
+  cursor: pointer;
+  transition: 2s;
+}
+.content_e{
+  margin-left: 40px;
+  transform: translateX(177px);
+  margin-top: 70px;
+}
+.content_e img{
+  width: 350px;
+  height: 240px;
+  border-radius: 15px 15px 0 0;
+}
+.content_e p:nth-of-type(1){
+  font-size: 18px;
+}
+.content_e p:nth-of-type(2){
+  color: rgb(114, 180, 227);
+  font-weight: 400;
+}
+.e_text{
+  background-color: rgb(253, 250, 250);
+  width: inherit;
+  height: 65px;
+  padding-top: 10px;
+  border-radius: 0 0 2px 2px;
+}
+.e_text p:nth-child(1){
+  font-weight: 500;
+}
+.contents_e:hover{
+  transform: translateX(-400px);
+}
+
+
+/* 혜택___________________________ */
+.b_image{
+  margin:80px 0 0 0;}
+.b_image img{
+  width: 350px;
+  height: 210px;
+  border-radius: 3px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.b_image img:hover{
+  transform: rotate(-10deg);
+}
+.b_more a{
+  display: inline-block;
+  margin-top: 40px;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 20px;
+  padding: 3px;
+}
+/* 특별관________________________ */
+.sm_hall{
+  display: flex;
+  justify-content: center;
+  margin-top:70px;
+}
+.s_hall{
+  width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 70px;
+}
+.hall{
+  color: #fff;
+  font-size: 17px;
+  position: relative;
+  width: 250px;
+  height: 280px;
+}
+.hall1{
+  background: url(../image/specialhall1.JPG)no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.hall2{
+  background: url(../image/specialhall2.JPG)no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.hall3{
+  background: url(../image/specialhall3.JPG)no-repeat ;
+  background-size: cover;
+  border-radius: 50%;
+}
+.hall4{
+  background: url(../image/specialhall4.JPG)no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.hall span{
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  left: 0;
+  border: 1px solid #fff;
+  border-radius: 40% 60% 65% 45% / 40% 45% 55% 70%;
+}
+.hall div{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+.hall p{margin-top: 5px;}
+.hall div a{
+  display: inline-block;
+  background-color: #222;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 40px;
+  text-transform: capitalize;
+}
+.hall span:nth-child(1){animation:circle 6s linear infinite;}
+.hall span:nth-child(2){animation:circle 4s linear infinite reverse;}
+.hall span:nth-child(3){animation:circle 10s linear infinite;}
+
+.hall:hover span:nth-child(1){opacity: 0.3;}
+.hall:hover span:nth-child(2){opacity: 0.6;}
+.hall:hover span:nth-child(3){opacity: 0.8;}
+
+.hall:hover span{
+  background-color: aliceblue;
+  border: none;
+}
+.hall:hover p{
+  font-weight: 500;
+  color: #222;
+  text-shadow: none;
+}
+.hall a:hover{
+  background-color: rgb(36, 41, 100);
+}
+/* footer __________________________*/
+footer{
+  margin-top: 100px;
+  width: 100%;
+  background-color: lightgray;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+.content_f{
+  width: 1200px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+.content_f div{
+  text-align: left;
+  margin-left: 80px;
+}
+.content_f div p{
+  margin-top: 5px;
+  font-size: 14px;
+}
+.content_f div span{
+  display: block;
+  margin-bottom: 30px;
+}
+address{
+  transform: translatex(400px) translateY(120px);
+  font-style: normal;
+  font-size: 12px;
+}
